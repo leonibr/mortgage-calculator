@@ -1,0 +1,103 @@
+@use '../../styles/init/variables' as var;
+
+$fontsize: 1.2rem;
+
+.app-slider {
+  display: flex;
+  flex-direction: column;
+  input[type='range'] {
+    height: 42px;
+    -webkit-appearance: none;
+    text-align: center;
+    margin: 0.625rem 0;
+    //width: 100%;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1.125rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 1px #000000;
+      background: #1b3979;
+      border-radius: 0.5625rem;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      // box-shadow: 1px 1px 0 0 #666;
+      border: 1px solid #eee;
+      height: 2 * 1.125rem;
+      width: 2 * 1.125rem;
+      border-radius: 1.125rem;
+      background: #ffffff;
+      cursor: pointer;
+      margin-top: -0.5625rem;
+    }
+    &:focus::-webkit-slider-thumb {
+      background: #ffffff86;
+      border: 1px solid #ccc;
+    }
+    &:focus::-webkit-slider-runnable-track {
+      background: #1b3979;
+    }
+    &::-moz-range-track {
+      width: 100%;
+      height: 1.125rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 1px #000000;
+      background: #1b3979;
+      border-radius: 0.5625rem;
+      border: 0px solid #000000;
+    }
+    &::-moz-range-thumb {
+      box-shadow: 0px 0px 1px #000000;
+      border: 0px solid #000000;
+      height: 2 * 1.125rem;
+      width: 2 * 1.125rem;
+      border-radius: 1.125rem;
+      background: #ffffff;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 5rem 1fr 5rem 5.5rem;
+    margin-bottom: 1rem;
+    & &__min,
+    & &__max {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $fontsize;
+    }
+    & &__range {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: $fontsize;
+      text-align: center;
+      input[type='range'] {
+        width: 100%;
+      }
+      span {
+        display: block;
+        visibility: hidden;
+        color: var.$color-invalid;
+        font-size: calc(0.75 * $fontsize);
+        &:invalid {
+          visibility: visible;
+        }
+      }
+    }
+    & &__value {
+      text-align: center;
+    }
+  }
+}

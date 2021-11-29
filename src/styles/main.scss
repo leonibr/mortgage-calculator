@@ -1,0 +1,25 @@
+@use './mixins/responsive' as mx;
+@use './init/variables' as var;
+
+main {
+  border-radius: var.$border-radius;
+  box-shadow: var.$box-shadow;
+  margin: 2rem 10rem;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+
+  @include mx.responsive(smalldesk) {
+    grid-template-columns: 1fr;
+    margin: 2rem 5rem;
+  }
+
+  @include mx.responsive(mobile) {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
+  }
+
+  aside {
+    margin: var.$min-spacer;
+    background-color: coral;
+  }
+}

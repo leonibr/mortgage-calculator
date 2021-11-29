@@ -1,0 +1,62 @@
+@use './variables' as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  font-size: 16px;
+}
+*,
+button,
+input {
+  border: 0;
+  outline: 0;
+  font-family: var.$base-font;
+}
+
+input[type='text'] {
+  font-size: 1.2rem;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  margin: 6px 0;
+  text-align: left;
+  outline: 0;
+  border: 2px solid #999;
+  padding: var.$min-spacer;
+  border-radius: var.$border-radius;
+  &:focus {
+    outline: 0;
+    border: 2px solid var.$color-primary;
+    box-shadow: var.$box-shadow;
+  }
+  &:invalid {
+    outline: 0;
+    border: 2px solid var.$color-invalid;
+    box-shadow: none;
+  }
+}
+
+button {
+  outline: 0;
+  padding: 0.625rem 0 0.8rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  border-radius: var.$border-radius;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in;
+  &.btn__primary {
+    color: #fff;
+    background-color: var.$color-primary;
+    &:hover {
+      box-shadow: var.$box-shadow;
+    }
+  }
+}

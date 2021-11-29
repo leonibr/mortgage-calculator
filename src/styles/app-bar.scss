@@ -1,0 +1,27 @@
+@use './init/variables' as var;
+@use './mixins/responsive' as mx;
+
+$margin-top: 0.8125rem;
+$margin-right: 10rem;
+
+div.app-bar {
+  border: 1px solid transparent;
+  box-shadow: var.$box-shadow;
+  h1 {
+    font-family: var.$banner-font;
+    margin: $margin-top $margin-right;
+  }
+
+  @include mx.responsive(laptop) {
+    h1 {
+      margin: $margin-top 1rem;
+      text-align: center;
+    }
+  }
+  @include mx.responsive(mobile) {
+    h1 {
+      margin: $margin-top 1rem;
+      text-align: center;
+    }
+  }
+}

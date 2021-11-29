@@ -1,0 +1,61 @@
+@use '../../styles/init/variables' as var;
+
+$spacer: calc(1.5 * var.$min-spacer);
+.input-field {
+  margin: calc(2 * var.$min-spacer) 0;
+  & &__label {
+    display: block;
+    margin-bottom: $spacer;
+  }
+  & &__prefix {
+    display: inline-block;
+    padding-left: 1.5rem;
+    border-radius: var.$border-radius;
+    border: 2px solid var.$border-color-default;
+    width: 100%;
+    font-size: 1.2rem;
+    &.focus {
+      border: 2px solid var.$color-primary;
+      box-shadow: var.$box-shadow;
+    }
+  }
+  & &__field {
+    margin: 0;
+    border: 0;
+    width: calc(100% - 2rem);
+    text-align: left;
+    padding-left: 0.3125rem;
+    &:invalid {
+      border: none;
+    }
+    &:focus {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+  & &__message {
+    visibility: hidden;
+    margin-top: 0.375rem;
+    font-size: 0.825rem;
+    display: block;
+    color: var.$color-invalid;
+  }
+}
+:invalid {
+  .input-field__prefix {
+    border-color: var.$color-invalid;
+    box-shadow: none;
+  }
+  .input-field__message {
+    visibility: visible;
+  }
+}
+
+:valid {
+  .input-field__prefix {
+    border-color: var.$border-color-default;
+  }
+  .input-field__message {
+    visibility: hidden;
+  }
+}

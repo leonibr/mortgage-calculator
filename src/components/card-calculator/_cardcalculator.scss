@@ -1,0 +1,39 @@
+@use '../../styles/init/variables' as var;
+@use '../../styles/mixins/responsive' as mx;
+
+.card-calculator {
+  margin: var.$min-spacer var.$min-spacer 1.5rem var.$min-spacer;
+  padding: var.$min-spacer;
+
+  & &__separator {
+    margin-top: (1.5 * var.$min-spacer);
+    margin-bottom: (3 * var.$min-spacer);
+    border-bottom: 1px solid #dedede;
+    width: 100%;
+  }
+  & &__form {
+    margin: (2.5 * var.$min-spacer) 0;
+
+    &_row {
+      display: grid;
+      column-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+
+      @include mx.responsive(smalldesk) {
+        grid-template-columns: 1fr;
+      }
+
+      @include mx.responsive(tablet) {
+        grid-template-columns: 1fr;
+      }
+
+      @include mx.responsive(mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &_footer {
+      margin-top: 1.25rem;
+    }
+  }
+}
