@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "parcel",
     "build": "parcel build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "author": "Ashley Marques",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "jest": "^27.4.0",
     "parcel": "^2.0.1"
   }
 }
