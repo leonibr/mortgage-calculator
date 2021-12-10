@@ -1,4 +1,6 @@
+const math = require('../../modules/math');
 const src = `
+<aside class="card-calculator__main">
 <label>Change values to calculate your results</label>
 <hr class="card-calculator__separator" />
 <form class="card-calculator__form">
@@ -6,6 +8,7 @@ const src = `
   <app-slider
     id="rate"
     label="Rate of interest (%)"
+    initial="1.8"
     min="0.1"
     max="10"
     step="0.1"
@@ -34,7 +37,30 @@ const src = `
     <div class="card-calculator__form_footer">
     <button class="btn__primary">Calculate</button>
     </div>
-</form>
+  </form>
+  </aside>
+    <aside class="card-calculator__result">
+      <div class="card-calculator__result_card">
+            <h1>Your Results</h1>
+            <div class="card-calculator__result_card_group">
+              <label class="card-calculator__result_card_group_label">Principal & Interest</label>
+              <span class="card-calculator__result_card_group_response">$ 1,438.79</span>
+            </div>
+            <div class="card-calculator__result_card_group">
+              <label class="card-calculator__result_card_group_label">Tax</label>
+              <span class="card-calculator__result_card_group_response">$ 83.33</span>
+          </div>
+          <div class="card-calculator__result_card_group">
+            <label class="card-calculator__result_card_group_label">Insurance</label>
+            <span class="card-calculator__result_card_group_response">$ 25.00</span>
+          </div>
+         <hr class="card-calculator__separator" />
+          <div class="card-calculator__result_card_group">
+            <label class="card-calculator__result_card_group_label bigger">Total Monthly Payment</label>
+            <span class="card-calculator__result_card_group_response">$ 25.00</span>
+          </div>
+      </div>
+    </aside>
 `;
 
 class CardCalculator extends HTMLElement {
@@ -63,13 +89,13 @@ class CardCalculator extends HTMLElement {
 
     self.button.addEventListener('click', (ev) => {
       ev.preventDefault();
-      const tax = self.tax.value;
-      const loan = self.loan.value;
-      const insurance = self.insurance.value;
       const form = self.querySelector('.card-calculator__form');
-
+      let isValid = true;
       for (let index = 0; index < form.elements.length; index++) {
         const element = form.elements[index];
+      }
+      if (form.checkVaidity() === false) {
+        console.log('form is invalid');
       }
 
       // });  ((el) => el.checkValidity());

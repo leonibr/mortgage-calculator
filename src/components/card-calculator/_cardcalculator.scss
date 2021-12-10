@@ -2,17 +2,37 @@
 @use '../../styles/mixins/responsive' as mx;
 
 .card-calculator {
-  margin: var.$min-spacer var.$min-spacer 1.5rem var.$min-spacer;
-  padding: var.$min-spacer;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+ 
+
+  @include mx.responsive(smalldesk) {
+    grid-template-columns: 1fr;
+    //margin: 2rem 5rem;
+  }
+
+  @include mx.responsive(mobile) {
+    grid-template-columns: 1fr;
+    //margin: 2rem 1rem;
+  }
+  & &__main {
+    margin: var.$min-spacer var.$min-spacer 1.5rem var.$min-spacer;
+    padding: 2.5 * var.$min-spacer;
+    border-radius: var.$border-radius;
+    box-shadow: var.$box-shadow;
+
+  }
 
   & &__separator {
-    margin-top: (1.5 * var.$min-spacer);
+    margin-top: (3 * var.$min-spacer);
     margin-bottom: (3 * var.$min-spacer);
     border-bottom: 1px solid #dedede;
     width: 100%;
   }
   & &__form {
+
     margin: (2.5 * var.$min-spacer) 0;
+    
 
     &_row {
       display: grid;
@@ -35,5 +55,51 @@
     &_footer {
       margin-top: 1.25rem;
     }
+  }
+
+  & &__result {    
+      margin: var.$min-spacer;
+      margin-left: 0;
+      display: flex;
+      
+      &_card {
+        align-self: center;
+        background-color: #fbfbfb;    
+        height: 85%;
+        width: 90%;
+        padding-left: 3 * var.$min-spacer;
+
+        @include mx.responsive(tablet) {
+          width: 100%;
+
+        }
+  
+        @include mx.responsive(mobile) {
+          width: 100%;
+        }
+
+
+        &_group {
+          margin-top: 3 * var.$min-spacer;
+
+          &_label {
+            display: block;
+            color: #5d5d5d;
+
+            &.bigger {
+              font-size: 1.5rem;
+            }
+          }
+          &_response {
+            margin-top:2 * var.$min-spacer;
+            display: block;
+            color: #000;
+            font-size: 2rem;
+            font-weight: bold;
+          }
+        }
+
+      }
+
   }
 }

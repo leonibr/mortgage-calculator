@@ -61,17 +61,17 @@ class InputField extends HTMLElement {
     this.appendChild(template.content.cloneNode(true));
     this.internals_ = this.attachInternals();
     this.value_ = undefined;
-  }
-  connectedCallback() {
-    const self = this;
     const label = this.getAttribute('label');
     const required = this.getAttribute('required');
     if (required) {
-      self.isRequired = true;
+      this.isRequired = true;
     } else {
-      self.isRequired = false;
+      this.isRequired = false;
     }
-    self.label.innerHTML = label;
+    this.label.innerHTML = label;
+  }
+  connectedCallback() {
+    const self = this;
 
     self.addEventListener('input', this.updateValue(self));
     self.addEventListener('onfocus', () => {
@@ -84,12 +84,11 @@ class InputField extends HTMLElement {
       if ('1234567890'.indexOf(char) < 0) {
         ev.preventDefault();
       }
-      console.log('keypress ' + self.value_);
       if (char === '0' && self.value_.toString().length === 0) {
         ev.preventDefault();
       }
     });
-    self.inputText.addEventListener('keyup', (ev) => {
+    self.inputText.addEventListener('keyup', () => {
       const value = self.value_.toString().replace(/,/g, '');
       const numbers = value.toString().split('').reverse();
       const agg = [];
@@ -115,10 +114,6 @@ class InputField extends HTMLElement {
       const prefix = self.querySelector('.input-field__prefix');
       prefix.classList.remove('focus');
     });
-    // sefl.addEventListener('blur', () => {
-    //   const prefix = self.querySelector('.input-field__prefix');
-    //   prefix.focus();
-    // })
   }
   disconnectedCallback() {
     const self = this;

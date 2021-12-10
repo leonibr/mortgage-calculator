@@ -25,6 +25,7 @@ export class Slider extends HTMLElement {
     const title = this.getAttribute('label');
     const stepValue = this.getAttribute('step');
     const currentValue = parseInt(this.maxValue / 2);
+    const initial = this.getAttribute('initial');
 
     this.appendChild(template.content.cloneNode(true));
     this.classList.add('app-slider');
@@ -41,6 +42,9 @@ export class Slider extends HTMLElement {
     this.min.innerHTML = this.minValue;
     this.max.innerHTML = this.maxValue;
     insideTitle.innerHTML = title;
+    if (initial && initial.toString().length > 0) {
+      this.inputRange.value = initial;
+    }
   }
 
   updateValue(newValue) {
