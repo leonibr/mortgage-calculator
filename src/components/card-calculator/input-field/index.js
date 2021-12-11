@@ -36,7 +36,6 @@ class InputField extends HTMLElement {
   }
 
   checkValidity() {
-    console.log('validatiing');
     if (this.value_ === undefined || this.value_ < 0 || this.value_ === '') {
       this.internals_.setValidity({ customError: true }, 'Mandadory');
     }
@@ -142,4 +141,4 @@ class InputField extends HTMLElement {
   }
 }
 
-window.customElements.define('app-input-field', InputField);
+window.customElements.define('ash-input-field', InputField);

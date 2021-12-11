@@ -1,4 +1,4 @@
-@use '../../styles/init/variables' as var;
+@use '../../../styles/init/variables' as var;
 
 $spacer: calc(1.5 * var.$min-spacer);
 .input-field {

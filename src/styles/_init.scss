@@ -3,7 +3,8 @@
 @import './init/resets';
 
 @import './app-bar';
-@import '../components/input-field/input-field';
-@import '../components/slider/slider';
+@import '../components/card-calculator/input-field/input-field';
+@import '../components/card-calculator/slider/slider';
+@import '../components/card-calculator/result-card/result-card';
 @import '../components/card-calculator/cardcalculator';
 @import './main';

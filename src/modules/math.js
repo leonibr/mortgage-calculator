@@ -43,12 +43,10 @@ const principalInterest = (interestRate, loanAmount, yearsOfMortgage) => {
   return ans;
 };
 
-const tax = byMonthRate;
-
-const insurance = byMonthRate;
-
-module.exports = {
-  tax: tax,
-  insurance: insurance,
-  principalInterest: principalInterest,
+const MortgageMath = {
+  tax: byMonthRate,
+  insurance: byMonthRate,
+  principal: principalInterest,
 };
+// export { MortgageMath };
+module.exports = MortgageMath;

@@ -118,4 +118,4 @@ export class Slider extends HTMLElement {
   }
 }
 
-window.customElements.define('app-slider', Slider);
+window.customElements.define('ash-slider', Slider);

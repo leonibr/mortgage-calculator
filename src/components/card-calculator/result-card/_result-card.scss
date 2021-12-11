@@ -1,0 +1,53 @@
+@use '../../../styles/init/variables' as var;
+@use '../../../styles/mixins/responsive' as mx;
+
+
+.result-card {    
+    margin: var.$min-spacer;
+    margin-left: 0;
+    display: flex;
+    
+    &__report {
+      align-self: center;
+      background-color: #fbfbfb;    
+      height: 85%;
+      width: 90%;
+      padding-left: 3 * var.$min-spacer;
+
+      @include mx.responsive(tablet) {
+        width: 100%;
+
+      }
+
+      @include mx.responsive(mobile) {
+        width: 100%;
+      }
+
+
+      &_group {
+        margin-top: 3 * var.$min-spacer;
+
+        &_label {
+          display: block;
+          color: #5d5d5d;
+
+          &.bigger {
+            font-size: 1.5rem;
+          }
+        }
+        &_response {
+          margin-top:2 * var.$min-spacer;
+          display: block;
+          color: #000;
+          font-size: 2rem;
+          font-weight: bold;
+
+          &.grey {
+            color: #bbbcbc;
+          }
+        }
+      }
+
+    }
+
+}

@@ -1,4 +1,3 @@
-const { principalInterest } = require('./math');
 const math = require('./math');
 
 describe('Tax function tests', () => {
@@ -53,40 +52,40 @@ describe('Insurance function tests', () => {
 
 describe('Principle & Interest tests', () => {
   test('Should return 0 when interestRate is NaN', () => {
-    expect(math.principalInterest('5t5', 100, 20)).toBe(0);
+    expect(math.principal('5t5', 100, 20)).toBe(0);
   });
   test('Should return 0 when interestRate is a negative number', () => {
-    expect(math.principalInterest(-5, 100, 20)).toBe(0);
+    expect(math.principal(-5, 100, 20)).toBe(0);
   });
   test('Should return 0 when interestRate is equals to 0', () => {
-    expect(math.principalInterest(0, 100, 20)).toBe(0);
+    expect(math.principal(0, 100, 20)).toBe(0);
   });
   test('Should return 0 when loanAmount is NaN', () => {
-    expect(math.principalInterest(1.8, '2y00', 20)).toBe(0);
+    expect(math.principal(1.8, '2y00', 20)).toBe(0);
   });
   test('Should return 0 when loanAmount is a negative number', () => {
-    expect(math.principalInterest(1.8, -25000, 20)).toBe(0);
+    expect(math.principal(1.8, -25000, 20)).toBe(0);
   });
   test('Should return 0 when loanAmount is equals to 0', () => {
-    expect(math.principalInterest(1.8, 0, 20)).toBe(0);
+    expect(math.principal(1.8, 0, 20)).toBe(0);
   });
   test('Should return 0 when yearsOfMortgage is NaN', () => {
-    expect(math.principalInterest(1.8, 400000, '3r0')).toBe(0);
+    expect(math.principal(1.8, 400000, '3r0')).toBe(0);
   });
   test('Should return 0 when yearsOfMortgage is a negative number', () => {
-    expect(math.principalInterest(1.8, 400000, -30)).toBe(0);
+    expect(math.principal(1.8, 400000, -30)).toBe(0);
   });
   test('Should return 0 when yearsOfMortgage is equals to 0', () => {
-    expect(math.principalInterest(1.8, 400000, 0)).toBe(0);
+    expect(math.principal(1.8, 400000, 0)).toBe(0);
   });
   test('Should return 1438.79 when interestRate=1.8 loanAmount=400K yearsOfMortage=30', () => {
-    expect(math.principalInterest(1.8, 400000, 30)).toBe(1438.79);
+    expect(math.principal(1.8, 400000, 30)).toBe(1438.79);
   });
 });
 
 describe('Monthly payment', () => {
   test('Should be 1547.12 when interestRate=1.8 loanAmount=400K yearsOfMortage=30 annualTax=1000 annualInsurance=300', () => {
-    const interest = math.principalInterest(1.8, 400000, 30);
+    const interest = math.principal(1.8, 400000, 30);
     const tax = math.tax(1000);
     const insurance = math.insurance(300);
     expect(interest + tax + insurance).toBe(1547.12);

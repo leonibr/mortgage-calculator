@@ -51,12 +51,21 @@ button {
   border-radius: var.$border-radius;
   cursor: pointer;
   box-shadow: none;
-  transition: background-color 0.3s ease-in, box-shadow 0.3s ease-in;
+  transition: box-shadow 0.1s ease-in;
   &.btn__primary {
     color: #fff;
     background-color: var.$color-primary;
     &:hover {
       box-shadow: var.$box-shadow;
     }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+:invalid {
+  button {
+    cursor: not-allowed;
   }
 }
