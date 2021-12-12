@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mortgage_calculator:
+    restart: always
+    build: 
+      context: .
+      target: mortgage_calculator
+    ports:
+     - "1234:80"
+    environment:
+      APP_URL: "mortgage.marques.top"
+      LETSENCRYPT_HOST: "mortgage.marques.top"
+      VIRTUAL_HOST: "mortgage.marques.top"     
