@@ -14,6 +14,7 @@ $spacer: calc(1.5 * var.$min-spacer);
     border: 2px solid var.$border-color-default;
     width: 100%;
     font-size: 1.2rem;
+    height: 50px;
     &.focus {
       border: 2px solid var.$color-primary;
       box-shadow: var.$box-shadow;
@@ -45,6 +46,10 @@ $spacer: calc(1.5 * var.$min-spacer);
   .input-field__prefix {
     border-color: var.$color-invalid;
     box-shadow: none;
+    &.focus {
+      border-color: var.$color-invalid;
+      box-shadow: var.$box-shadow;
+    }
   }
   .input-field__message {
     visibility: visible;

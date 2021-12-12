@@ -80,7 +80,8 @@ class InputField extends HTMLElement {
     });
     self.inputText.addEventListener('keypress', (ev) => {
       var char = String.fromCharCode(ev.which);
-      if ('1234567890'.indexOf(char) < 0) {
+
+      if ('1234567890'.indexOf(char) < 0 && ev.which !== 13) {
         ev.preventDefault();
       }
       if (char === '0' && self.value_.toString().length === 0) {
