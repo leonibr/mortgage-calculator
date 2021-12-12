@@ -72,8 +72,6 @@ class CardCalculator extends HTMLElement {
 
   constructor() {
     super();
-    console.log('mortgage', mortgageMath);
-    this.mortgageMath = mortgageMath;
     const template = document.createElement('template');
     template.innerHTML = src;
     this.classList.add('card-calculator');

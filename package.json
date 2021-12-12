@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Mortgage Calculator",
   "source": "src/index.html",
-  "main": "index.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "dev": "parcel",
@@ -24,5 +23,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.0",
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.3.2"
   }
 }
