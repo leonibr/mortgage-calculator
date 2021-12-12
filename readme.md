@@ -82,7 +82,7 @@ class CardCalculator extends HTMLElement {
 window.customElements.define('ash-card-calculator', CardCalculator);
 ```
 
-1. it also provides component base model on html: `ash-card-calculator` is the CustomElement
+2. it also provides component base model on html: `ash-card-calculator` is the CustomElement
 
 ```html
 <!DOCTYPE html>
@@ -108,7 +108,7 @@ window.customElements.define('ash-card-calculator', CardCalculator);
 </html>
 ```
 
-1. Using [Parcel](https://parceljs.org/) as building tool makes easy to target a range of browsers:
+3. Using [Parcel](https://parceljs.org/) as building tool makes easy to target a range of browsers:
 
 ```json
 {
@@ -117,9 +117,9 @@ window.customElements.define('ash-card-calculator', CardCalculator);
 }
 ```
 
-1. Unit testing critical functions using Jest:
+4. Unit testing critical functions using Jest:
    <img src="assets/unitTest.png">
-1. Global Sass for all components
+5. Global Sass for all components
 
    <img src="assets/styles.png">
 
