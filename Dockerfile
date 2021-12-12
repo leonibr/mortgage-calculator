@@ -1,6 +1,6 @@
 FROM node:16 as build
 WORKDIR /app
-ADD package*.json .
+ADD ./package*.json ./
 RUN npm install
 ADD src/ src/
 RUN npm run build
