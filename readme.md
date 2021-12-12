@@ -2,7 +2,7 @@
 
 ## See it live [here](https://mortgage.marques.top)
 
-![home](assets/homescreen.png)
+![home](assets/mortgageview.gif)
 
 ## ⚡ Objective
 
@@ -15,9 +15,9 @@ Implement a simple and responsive Mortgage calculator using ES6 features and Sas
 1. After downloading half of the internet start the app with the command: `npm run dev` and wait for this message:
    <img src="assets/finishdev.png" width="250px">
 1. You now can open your browser at `http://localhost:1234/`🚀
-1. You also can run the tests using: `npm run test`
+1. You also can run the tests using: `npm run test, here is the output:
 
-```
+```js
  PASS  src/modules/math.test.js
   Tax function tests
     √ Should be 100 when annualTax is 1200
@@ -82,7 +82,7 @@ class CardCalculator extends HTMLElement {
 window.customElements.define('ash-card-calculator', CardCalculator);
 ```
 
-1. it also provides component base model on html
+1. it also provides component base model on html: `ash-card-calculator` is the CustomElement
 
 ```html
 <!DOCTYPE html>
@@ -108,10 +108,19 @@ window.customElements.define('ash-card-calculator', CardCalculator);
 </html>
 ```
 
-1. Using [Parcel](https://parceljs.org/) as building tool
+1. Using [Parcel](https://parceljs.org/) as building tool makes easy to target a range of browsers:
+
+```json
+{
+  // other properties removed for simplicity
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
+```
+
 1. Unit testing critical functions using Jest:
    <img src="assets/unitTest.png">
 1. Global Sass for all components
+
    <img src="assets/styles.png">
 
 ## 🤔 Why not...
